@@ -1553,20 +1553,20 @@ class Fun(Cog):
 			final.seek(0)
 			await self.bot.upload(final, filename='needsmorejpeg.jpg')
 
-	# @commands.command(pass_context=True, aliases=['needsmorejpeg', 'nmj', 'jpegify'])
-	# async def jpeg(self, ctx, url:str, amount:int=5):
-	# 	"""Add more JPEG to an Image\nNeeds More JPEG!"""
-	# 	if url.startswith('<@') and len(ctx.message.mentions) != 0:
-	# 		url = ctx.message.mentions[0].avatar_url
-	# 	api = 'http://api.jpeg.li/v1/existing'
-	# 	for x in amount:
-	# 		payload = {
-	# 			'url': url
-	# 		}
-	# 		r = requests.post(api, data=payload)
-	# 		url = r.json()['url']
-	# 	b = await self.bytes_download(url)
-	# 	await self.bot.upload(b, filename='needsmorejpeg.jpg')
+	 @commands.command(pass_context=True, aliases=['needsmorejpeg', 'nmj', 'jpegify'])
+	 async def jpeg(self, ctx, url:str, amount:int=5):
+	 	"""Add more JPEG to an Image\nNeeds More JPEG!"""
+	 	if url.startswith('<@') and len(ctx.message.mentions) != 0:
+	 		url = ctx.message.mentions[0].avatar_url
+	 	api = 'http://api.jpeg.li/v1/existing'
+	 	for x in amount:
+	 		payload = {
+	 			'url': url
+	 		}
+	 		r = requests.post(api, data=payload)
+	 		url = r.json()['url']
+	 	b = await self.bytes_download(url)
+	 	await self.bot.upload(b, filename='needsmorejpeg.jpg')
 
 	def do_vw(self, b, txt):
 		im = PIL.Image.open(b)
@@ -1792,17 +1792,17 @@ class Fun(Cog):
 			final.seek(0)
 			await self.bot.upload(final, filename="eyes.png")
 			await self.bot.delete_message(x)
-		# except Exception as e:
-		# 	exc_type, exc_obj, tb = sys.exc_info()
-		# 	f = tb.tb_frame
-		# 	lineno = tb.tb_lineno
-		# 	filename = f.f_code.co_filename
-		# 	linecache.checkcache(filename)
-		# 	line = linecache.getline(filename, lineno, f.f_globals)
-		# 	await self.bot.say(code.format('EXCEPTION IN ({}, LINE {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj)))
-		# 	os.remove(location)
-		# 	os.remove(final_location)
-		# 	os.remove(s_image_loc)
+		 except Exception as e:
+		 	exc_type, exc_obj, tb = sys.exc_info()
+		 	f = tb.tb_frame
+		 	lineno = tb.tb_lineno
+		 	filename = f.f_code.co_filename
+		 	linecache.checkcache(filename)
+		 	line = linecache.getline(filename, lineno, f.f_globals)
+		 	await self.bot.say(code.format('EXCEPTION IN ({}, LINE {} "{}"): {}'.format(filename, lineno, line.strip(), exc_obj)))
+		 	os.remove(location)
+		 	os.remove(final_location)
+		 	os.remove(s_image_loc)
 
 	@eyes.command(name='list', pass_context=True, invoke_without_command=True)
 	@commands.cooldown(1, 20)
