@@ -34,7 +34,7 @@ def format(element):
 def get_posts(board):
   '''Return all posts of the board's front page.'''
   url = API_PAGE.format(board)
-  # url = 'http://api.4chan.org/b/1.json'
+   url = 'http://api.4chan.org/b/1.json'
   response = requests.get(url)
   threads = response.json()
   threads = threads['threads']
