@@ -121,17 +121,17 @@ class Utils(Cog):
 		await self.bot.say("Drinking bleach.....")
 		await self.bot.logout()
 
-	# @commands.command(pass_context=True)
-	# async def evaljs(self, *, code:str):
-	# 	"""eval JS code in Node.JS"""
-	# 	code_clean = "{0}".format(code.strip("```"))
-	# 	node = execjs.get("Node")
-	# 	execute = node.eval(code_clean)
-	# 	try:
-	# 		result = node.eval(code_clean)
-	# 		await self.bot.say(code.format(result))
-	# 	except execjs.ProgramError as e:
-	# 		await self.bot.say(code.format(type(e).__name__ + ': ' + str(e)))
+	 @commands.command(pass_context=True)
+	 async def evaljs(self, *, code:str):
+	 	"""eval JS code in Node.JS"""
+	 	code_clean = "{0}".format(code.strip("```"))
+	 	node = execjs.get("Node")
+	 	execute = node.eval(code_clean)
+	 	try:
+	 		result = node.eval(code_clean)
+	 		await self.bot.say(code.format(result))
+	 	except execjs.ProgramError as e:
+	 		await self.bot.say(code.format(type(e).__name__ + ': ' + str(e)))
 
 	@commands.command(pass_context=True)
 	@checks.is_owner()
@@ -524,7 +524,7 @@ class Utils(Cog):
 	@commands.command(pass_context=True, aliases=['showadmins', 'onlineadmins', 'modsonline', 'mods', 'onlinemods'])
 	async def admins(self, ctx):
 		"""Show current online admins and mods"""
-		# roles_ = ['admin', 'mod', 'moderator', 'administrator', 'owner', 'underadministrator', 'moderators', 'founder']
+		 roles_ = ['admin', 'mod', 'moderator', 'administrator', 'owner', 'underadministrator', 'moderators', 'founder']
 		admin_perms = ['administrator', 'manage_server']
 		mod_perms = ['manage_messages', 'ban_members', 'kick_members']
 		admin_roles = []
