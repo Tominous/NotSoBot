@@ -272,12 +272,12 @@ class Info(Cog):
 			biggest_server_name = server_list[max_index][0]
 			biggest_server_count = server_list[max_index][1]
 			magnitude_table = texttable.Texttable(max_width=90)
-			# magnitude_table.set_cols_width([90, 90])
+			 magnitude_table.set_cols_width([90, 90])
 			for x in server_magnitude:
 				magnitude_table.add_rows([["Server", "Commands"], [x['server_name'][:25], x['magnitude']]])
 			magnitude_msg = magnitude_table.draw()
 			command_table = texttable.Texttable(max_width=90)
-			# command_table.set_cols_width([90, 90])
+			 command_table.set_cols_width([90, 90])
 			for x in command_magnitude:
 				command_table.add_rows([["Command", "Count"], [x['command'], x['magnitude']]])
 			command_msg = command_table.draw()
@@ -328,7 +328,7 @@ class Info(Cog):
 			msg += ':desktop: **Server Statistics**\n'
 			msg += '> Largest Server: **{0}** (Users: **{1}**)\n'.format(biggest_server_name, biggest_server_count)
 			msg += '> Most used on: **{0}** (Commands: **{1}**/{2})\n'.format(server_magnitude[0]['server_name'], server_magnitude[0]['magnitude'], command_count)
-			# msg += '> Server with most messages: *{0}* (Messages: **{1}/{2}**)'
+			 msg += '> Server with most messages: *{0}* (Messages: **{1}/{2}**)'
 			await self.bot.say(msg)
 		except Exception as e:
 			print(e)
