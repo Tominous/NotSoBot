@@ -26,7 +26,7 @@ class Logging(Cog):
 		action = 0
 		self.cursor.execute(sql, (self.bot.shard_id, server, server_name, channel, channel_name, user, user_id, message_id, action))
 		self.cursor.commit()
-		# print("({0} <{1}>) {2} <{3}> | {4} <{5}> | {6}".format(server_name, server, channel_name, channel, user, user_id, message.clean_content))
+		 print("({0} <{1}>) {2} <{3}> | {4} <{5}> | {6}".format(server_name, server, channel_name, channel, user, user_id, message.clean_content))
 
 	async def on_message_edit(self, before, after):
 		if before.author == self.bot.user:
